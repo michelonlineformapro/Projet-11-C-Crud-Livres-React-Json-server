@@ -1,0 +1,92 @@
+{
+    "livres": [
+      {
+        "id": 1,
+        "nomLivre": "Livre javascript",
+        "descriptionLivre": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
+        "prixLivre": 12.5,
+        "imageLivre": "https://static.fnac-static.com/multimedia/Images/FR/NR/0d/4a/99/10045965/1507-1/tsp20181225081034/Tout-Javascript.jpg",
+        "categoriesLivre": "programmation"
+      },
+      {
+        "id": 2,
+        "nomLivre": "Livre PHP",
+        "descriptionLivre": "PHP: Hypertext Preprocessor, plus connu sous son sigle PHP, est un langage de programmation libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP.",
+        "prixLivre": 45458.25,
+        "imageLivre": "https://m.media-amazon.com/images/I/319uThTlOSL.jpg",
+        "categoriesLivre": "enfant"
+      },
+      {
+        "id": 3,
+        "nomLivre": "Livre Python",
+        "descriptionLivre": "Python est un langage de programmation interprété, multi-paradigme et multiplateformes. Il favorise la programmation impérative structurée, fonctionnelle et orientée objet.",
+        "prixLivre": 142.35,
+        "imageLivre": "https://www.dunod.com/sites/default/files/styles/principal_desktop/public/thumbnails/image/9782100804832-001-X.jpeg",
+        "categoriesLivre": "roman"
+      },
+      {
+        "id": 4,
+        "nomLivre": "Livre JAVA EE",
+        "descriptionLivre": "Java SE Jakarta EE Java ME JavaFX Java Card Jakarta EE, est une spécification pour la plate-forme Java d'Oracle, destinée aux applications d'entreprise.",
+        "prixLivre": 653.52,
+        "imageLivre": "https://images-na.ssl-images-amazon.com/images/I/51vifBnNFzL.jpg",
+        "categoriesLivre": "nouvelle"
+      },
+      {
+        "id": 5,
+        "nomLivre": "Livre C#",
+        "descriptionLivre": "C# est un langage de programmation orientée objet, commercialisé par Microsoft depuis 2002 et destiné à développer sur la plateforme Microsoft .NET.",
+        "prixLivre": "25.25",
+        "imageLivre": "https://images.epagine.fr/568/9782409020568_1_75.jpg",
+        "categoriesLivre": "thriller"
+      },
+      {
+        "nomLivre": "Livre Unity",
+        "descriptionLivre": "Unity est un moteur de jeu multiplateforme développé par Unity Technologies. Il est l'un des plus répandus dans l'industrie du jeu vidéo, aussi bien pour les grands studios que pour les indépendants du fait de sa rapidité aux prototypages et qu'il permet de sortir les jeux sur tous les supports.",
+        "prixLivre": "745.25",
+        "imageLivre": "https://images-na.ssl-images-amazon.com/images/I/81P2wG33znL.jpg",
+        "id": 6,
+        "categoriesLivre": "histoire"
+      },
+      {
+        "nomLivre": "Livre GO",
+        "descriptionLivre": "Go est un langage de programmation compilé et concurrent inspiré de C et Pascal. Ce langage a été développé par Google à partir d’un concept initial de Robert Griesemer, Rob Pike et Ken Thompson.",
+        "prixLivre": "45.25",
+        "imageLivre": "https://images-na.ssl-images-amazon.com/images/I/71qs2kJXq2L.jpg",
+        "id": 7,
+        "categoriesLivre": "programmation"
+      },
+      {
+        "nomLivre": "Livre react",
+        "descriptionLivre": "React est une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page HTML à chaque changement d'état",
+        "prixLivre": "45.35",
+        "imageLivre": "https://images-na.ssl-images-amazon.com/images/I/61azQ7sNkaL.jpg",
+        "id": 8,
+        "categoriesLivre": "thriller"
+      },
+      {
+        "nomLivre": "Livre VueJs",
+        "descriptionLivre": "Vue.js, est un framework JavaScript open-source utilisé pour construire des interfaces utilisateur et des applications web monopages. Vue a été créé par Evan You et est maintenu par lui et le reste des membres actifs de l'équipe principale travaillant sur le projet et son écosystème.",
+        "prixLivre": "78.25",
+        "imageLivre": "https://m.media-amazon.com/images/I/41S4XmOvbIL.jpg",
+        "id": 9,
+        "categoriesLivre": "roman"
+      },
+      {
+        "nomLivre": "Livre POO",
+        "descriptionLivre": "La programmation orientée objet, ou programmation par objet, est un paradigme de programmation informatique.",
+        "prixLivre": "45.25",
+        "imageLivre": "https://images-na.ssl-images-amazon.com/images/I/81HAE6124sL.jpg",
+        "id": 11,
+        "categoriesLivre": "nouvelle"
+      },
+      {
+        "nomLivre": "Livre React Native",
+        "descriptionLivre": "React est une bibliothèque JavaScript libre développée par Facebook depuis 2013. Le but principal de cette bibliothèque est de faciliter la création d'application web monopage, via la création de composants dépendant d'un état et générant une page HTML à chaque changement d'état.",
+        "prixLivre": "45.35",
+        "imageLivre": "https://images-na.ssl-images-amazon.com/images/I/413ad8ync2L._SX348_BO1,204,203,200_.jpg",
+        "id": 12,
+        "categoriesLivre": "programmation"
+      }
+    ]
+}

@@ -1,0 +1,28 @@
+html,body{
+  background-color: darkgoldenrod;
+  color: azure;
+}
+
+#root{
+  background-color: darkgoldenrod;
+  color: azure;
+}
+
+.card{
+  height: 100%!important;
+  background-color: #3e3c31!important;
+}
+
+a{
+  color: rgb(81, 68, 52)!important;
+  text-decoration: none!important;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+a:hover{
+  transform: scale(1.1);
+  color: brown!important;
+  cursor: pointer;
+}
+

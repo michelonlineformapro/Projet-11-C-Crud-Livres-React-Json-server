@@ -1,0 +1,15 @@
+//On declare une variable = String
+  let prenom = "";
+  //Un composant simple = fonction + props en paramètre de la fonction = unePropriété
+  const ComposantBasePlusProps = (unePropriete) =>{
+    return prenom = "Michael"
+  }
+
+  //Lors de l'appel du composant dans JSX: on passe la props = un paramètres de la fonctions = ma variable String
+
+  return (
+    <div className="App">
+      <p>SALUT</p>
+      <ComposantBasePlusProps unePropriete={prenom}/>
+    </div>
+  );
