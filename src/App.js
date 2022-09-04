@@ -10,7 +10,6 @@ function App() {
   return (
     <div className="container shadow mt-5">
       <Menu/>
-      <Livres />
     </div>
   );
 }

@@ -13,8 +13,8 @@ const Menu = () => (
   <div className={styles.Menu}>
     {/* Les liens = <a href=''>Liens</a> */}
     <BrowserRouter>
-    <nav class="navbar navbar-light bg-warning rounded shadow mt-3 p-3">
-        <div class="container-fluid">
+    <nav className="navbar navbar-light bg-warning rounded shadow mt-3 p-3">
+        <div className="container-fluid">
             <Link to='/'>NOS LIVRES</Link>
             <Link to='/ajouter-livre'>AJOUTER UN LIVRE</Link>
         </div>

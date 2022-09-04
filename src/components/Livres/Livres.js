@@ -44,6 +44,25 @@ function Livres(){
       console.log(index);
     }
 
+    //Supprimer un livre
+    const supprimerLivre = () => {
+      //La requete fetch http (axios) + methodes DELETE + url + id dynamique + 
+      axios.delete(`http://localhost:3001/livres/${livreConcerner.id}`)
+      //La promesse = reponse du serveur (json-server) a la requete
+      .then(reponse => {
+        //On declenche une confirmation
+        window.confirm('Valider le supression de ce livre ?');
+        //le debug
+        console.log(reponse.data);
+        //On rafraichis la page
+        window.location.reload();
+      })
+      //Si la promesse n'est pas tenue on retourne une erreur
+      .catch(erreur => {
+        console.error('Erreur lors de la supression du livre !' + erreur)
+      })
+    }
+
     useEffect(() => {
       afficherLivres()
     }, [])
@@ -62,13 +81,14 @@ function Livres(){
                     <p>PRIX: {livreConcerner.prixLivre}</p>
                     <p>{livreConcerner.categoriesLivre}</p>
                     <button className='btn btn-info'>EDITER</button>
-                    <button className='btn btn-danger mx-3'>SUPPRIMER</button>
+                    <button className='btn btn-danger mx-3' onClick={supprimerLivre}>SUPPRIMER</button>
                     <button className='btn btn-success' onClick={() => window.location.reload()}>RETOUR</button>
                   </div>
                 </div>
           </div>
         ):(
-          <div className='row'>             
+          <div className='row'>
+             
               {/* Sinon on afficher tous les livres */}
           {livre.map((book, index) =>
               <div className='col-md-4 col-sm-12 mt-5' key={index}>
