@@ -62,6 +62,57 @@ function Livres(){
         console.error('Erreur lors de la supression du livre !' + erreur)
       })
     }
+    
+      //Etat des champs du formulaire editer un livre
+       //fonction de tracking pour reperer les changements dans les inputs et les changements d'etats du DOM
+       const handleInputChange = event => {
+        //Recupération des attributs input name et value
+        //Ceci est un affectation par decomposition soit :
+        //const name = event.target 
+        //const value = event.target
+        const {name, value} = event.target;
+  
+        //spread Operator (extrait des données d'un tableau ou un objet et creer un nouveau tableau)
+        //Appel du mutateur setLivre
+        //On decompose (eclate) l'objet livre puis l'attribut name du champ <input> est egale a l'attribut value = event.target
+        setLivreConcerner({
+          ...livreConcerner,
+          [name]: value
+        })
+        console.log(setLivre)
+    }
+
+    //Mettre a jour un livre a l'aide du formulaire
+    function updateLivre(){
+      //Creer un bojet qui va remplacer le livre courant
+      let remplacerLivre = {
+            id: livreConcerner.id,
+            nomLivre: livreConcerner.nomLivre,
+            descriptionLivre: livreConcerner.descriptionLivre,
+            prixLivre: livreConcerner.prixLivre,
+            imageLivre: livreConcerner.imageLivre
+      }
+
+      //la requete http + methode put + url (id dynamique livre concerner) + requete + reponse
+      axios.put(`http://localhost:3001/livres/${livreConcerner.id}`, remplacerLivre)
+      //la promesse = reponse
+      .then(reponse => {
+        //mutateur du hook = setter 
+        //on eclate l'objet pour acceder a chaque propriétés de ce dernier
+        setLivreConcerner({
+          ...livreConcerner
+        })
+        //Debug = f12 navigateur
+        console.log(reponse.data)
+        //rafraichir la page
+        window.location.reload('/');
+      })
+      //Si la promesse n'est pas tenue on affiche une erreur
+      .catch(erreur => {
+        console.error('Erreur lors de la mise a jour !' + erreur)
+      })
+    }
+
 
     useEffect(() => {
       afficherLivres()
@@ -71,8 +122,10 @@ function Livres(){
       <div className={styles.Livres}>
         {/* si livre concerner retourne une valeur */}
         {livreConcerner ?(
-          <div className='container w-50 shadow p-3'>
+          <div className='container shadow p-3'>
             <h2 className='text-center text-danger bg-warning p-3 rounded'>Détails du livre : {livreConcerner.nomLivre}</h2>
+            <div className='row'>
+                <div className='col-md-6 col-sm-12'>
                 <div id='carte' className='card'>
                 <img className='p-3' src={livreConcerner.imageLivre} alt={livreConcerner.nomLivre} title={livreConcerner.nomLivre}/>
                   <div className='card-body'>
@@ -85,6 +138,73 @@ function Livres(){
                     <button className='btn btn-success' onClick={() => window.location.reload()}>RETOUR</button>
                   </div>
                 </div>
+                </div>
+                <div className='col-md-6 col-sm-12'>
+                  {/* FORMULAIRE EDITER UN LIVRE */}
+                <div id="edit-form-livre" className="mt-3 container">
+                        <h2 className="title is-2 has-text-success has-text-centered">EDITER LIVRE</h2>
+                        <div className="mt-3">
+                            <label className="label">Nom du livre</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="nomLivre"
+                                name="nomLivre"
+                                placeholder={livreConcerner.nomLivre}
+                                required
+                                value={livre.nomLivre}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+
+                        <div className="mt-3">
+                            <label className="label">Description du livre</label>
+                            <textarea
+                                className="form-control"
+                                id="descriptionLivre"
+                                name="descriptionLivre"
+                                required
+                                rows="5"
+                                placeholder={livreConcerner.descriptionLivre}
+                                value={livre.descriptionLivre}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+
+                        <div className="mt-3">
+                            <label className="label">Prix du livre</label>
+                            <input
+                                type="number"
+                                step='0.01'
+                                className="form-control"
+                                id="prixLivre"
+                                placeholder={livreConcerner.prixLivre}
+                                name="prixLivre"
+                                required
+                                value={livre.prixLivre}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+
+                        <div className="mt-3">
+                            <label className="label">Image du livre</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="imageLivre"
+                                name="imageLivre"
+                                placeholder={livreConcerner.imageLivre}
+                                required
+                                value={livre.imageLivre}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+
+                        <button className="btn btn-info mt-3" onClick={updateLivre}>Mettre à jour le livre</button>
+                </div>
+                </div>
+            </div>
+
           </div>
         ):(
           <div className='row'>

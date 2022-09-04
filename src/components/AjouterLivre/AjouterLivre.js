@@ -104,7 +104,7 @@ return(
       <div className='alert alert-success mt-3'>
           <h4 className='text-center text-success mt-3'>Le livre a bien été ajouté !</h4>
           <button className='btn btn-success mt-3' onClick={nouveauLivre}>Ajouter un autre livre ?</button>
-          <button className='btn btn-warning mt-3 mx-3' onClick={() => window.location.reload()}>Fermer</button>
+          <button className='btn btn-warning mt-3 mx-3' onClick={() => window.location.reload('/')}>Fermer</button>
       </div>
     ):(
      

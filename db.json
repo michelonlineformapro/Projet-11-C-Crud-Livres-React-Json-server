@@ -2,11 +2,10 @@
   "livres": [
     {
       "id": 1,
-      "nomLivre": "Livre javascript",
+      "nomLivre": "Livre Javascript",
       "descriptionLivre": "JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives et à ce titre est une partie essentielle des applications web.",
       "prixLivre": 12.5,
-      "imageLivre": "https://static.fnac-static.com/multimedia/Images/FR/NR/0d/4a/99/10045965/1507-1/tsp20181225081034/Tout-Javascript.jpg",
-      "categoriesLivre": "programmation"
+      "imageLivre": "https://static.fnac-static.com/multimedia/Images/FR/NR/0d/4a/99/10045965/1507-1/tsp20181225081034/Tout-Javascript.jpg"
     },
     {
       "id": 2,
