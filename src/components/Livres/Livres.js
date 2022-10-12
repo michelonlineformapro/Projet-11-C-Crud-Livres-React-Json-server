@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Livres.module.css';
-
+import Select from "react-select";
 //import du middleware axios
 import axios from 'axios';
 
@@ -13,6 +13,8 @@ function Livres(){
 
     //Recuperer un seul livre
     const [livreConcerner, setLivreConcerner] = useState(null);
+
+    const [livreChoisi, setLivreChoisi] = useState(livre);
     //L'index d'un objet dans le tableau json
     const [livreIndex, setLivreIndex] = useState(-1);
 
@@ -114,6 +116,22 @@ function Livres(){
     }
 
 
+
+    const options = livre.map(choix => ({
+        "value" : choix.nomLivre,
+        "label" : choix.nomLivre,
+        "descriptionLivre": choix.descriptionLivre,
+        "prixLivre": choix.prixLivre,
+        "imageLivre": choix.imageLivre,
+    }))
+
+    const handleSelectChange = (livre) => {
+        setLivreChoisi(livre)
+        console.log(livre)
+        //console.log(livre)
+    }
+
+
     useEffect(() => {
       afficherLivres()
     }, [])
@@ -208,7 +226,28 @@ function Livres(){
           </div>
         ):(
           <div className='row'>
-             
+
+                  <Select
+                      id="nomLivre"
+                      className="text-danger"
+                      options={options}
+                      name="nomLivre"
+                      onChange={handleSelectChange}
+                      value="nomLivre"
+                  />
+              <div>
+                  {livreChoisi ?(
+                      <div className="container shadow mt-3 p-3 bg-dark">
+                          <p>Nom livre : {livreChoisi.label}</p>
+                          <p>Description livre : {livreChoisi.descriptionLivre}</p>
+                          <img className='p-3' src={livreChoisi.imageLivre} alt={livreChoisi.nomLivre} title={livreChoisi.nomLivre} width="25%"/>
+                          <p>Prix livre : {livreChoisi.prixLivre} €</p>
+                      </div>
+                  ):(
+                      <div>Aucun resultat : </div>
+                  )}
+              </div>
+
               {/* Sinon on afficher tous les livres */}
           {livre.map((book, index) =>
               <div className='col-md-4 col-sm-12 mt-5' key={index}>
